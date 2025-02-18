@@ -7,8 +7,20 @@
 
   <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">Anchor Element Link</a>
   <button onclick="openNewWindow()">Window.open()</button>
+  <br />
+  <br />
+  <br />
+  <a href="#" id="myLink">Empty link that event handler sets the target & href</a>
 
   <script>
+    const link = document.getElementById("myLink");
+
+    link.addEventListener("click", function(event) {
+      // Set the target and href dynamically
+      link.target = "_blank";
+      link.href = "https://www.example.com";
+    });
+    
     function openNewWindow() {
       // Open a new window with a specific URL
       window.open("https://www.example.com", "_blank", "noopener=yes,noreferrer=yes");
